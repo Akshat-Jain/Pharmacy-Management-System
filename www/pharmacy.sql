@@ -280,76 +280,76 @@ CREATE TABLE `tempprescri` (
 -- Indexes for table `admin`
 --
 ALTER TABLE `admin`
-  ADD PRIMARY KEY (`admin_id`);
+ADD PRIMARY KEY (`admin_id`);
 
 --
 -- Indexes for table `cashier`
 --
 ALTER TABLE `cashier`
-  ADD PRIMARY KEY (`cashier_id`);
+ADD PRIMARY KEY (`cashier_id`);
 
 --
 -- Indexes for table `invoice`
 --
 ALTER TABLE `invoice`
-  ADD PRIMARY KEY (`invoice_id`);
+ADD PRIMARY KEY (`invoice_id`);
 
 --
 -- Indexes for table `invoice_details`
 --
 ALTER TABLE `invoice_details`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `stocks` (`drug`),
-  ADD KEY `invoices` (`invoice`);
+ADD PRIMARY KEY (`id`),
+ADD KEY `stocks` (`drug`),
+ADD KEY `invoices` (`invoice`);
 
 --
 -- Indexes for table `manager`
 --
 ALTER TABLE `manager`
-  ADD PRIMARY KEY (`manager_id`);
+ADD PRIMARY KEY (`manager_id`);
 
 --
 -- Indexes for table `paymenttypes`
 --
 ALTER TABLE `paymenttypes`
-  ADD PRIMARY KEY (`id`);
+ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `pharmacist`
 --
 ALTER TABLE `pharmacist`
-  ADD PRIMARY KEY (`pharmacist_id`);
+ADD PRIMARY KEY (`pharmacist_id`);
 
 --
 -- Indexes for table `prescription`
 --
 ALTER TABLE `prescription`
-  ADD PRIMARY KEY (`id`,`prescription_id`);
+ADD PRIMARY KEY (`id`,`prescription_id`);
 
 --
 -- Indexes for table `prescription_details`
 --
 ALTER TABLE `prescription_details`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `dsfd` (`drug_name`);
+ADD PRIMARY KEY (`id`),
+ADD KEY `dsfd` (`drug_name`);
 
 --
 -- Indexes for table `receipts`
 --
 ALTER TABLE `receipts`
-  ADD PRIMARY KEY (`reciptNo`);
+ADD PRIMARY KEY (`reciptNo`);
 
 --
 -- Indexes for table `stock`
 --
 ALTER TABLE `stock`
-  ADD PRIMARY KEY (`stock_id`);
+ADD PRIMARY KEY (`stock_id`);
 
 --
 -- Indexes for table `tempprescri`
 --
 ALTER TABLE `tempprescri`
-  ADD PRIMARY KEY (`id`);
+ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -359,61 +359,61 @@ ALTER TABLE `tempprescri`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `admin_id` tinyint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+MODIFY `admin_id` tinyint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `cashier`
 --
 ALTER TABLE `cashier`
-  MODIFY `cashier_id` tinyint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+MODIFY `cashier_id` tinyint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `invoice_details`
 --
 ALTER TABLE `invoice_details`
-  MODIFY `id` tinyint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+MODIFY `id` tinyint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
 -- AUTO_INCREMENT for table `manager`
 --
 ALTER TABLE `manager`
-  MODIFY `manager_id` tinyint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+MODIFY `manager_id` tinyint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `paymenttypes`
 --
 ALTER TABLE `paymenttypes`
-  MODIFY `id` tinyint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+MODIFY `id` tinyint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `pharmacist`
 --
 ALTER TABLE `pharmacist`
-  MODIFY `pharmacist_id` tinyint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+MODIFY `pharmacist_id` tinyint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `prescription`
 --
 ALTER TABLE `prescription`
-  MODIFY `id` tinyint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+MODIFY `id` tinyint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `prescription_details`
 --
 ALTER TABLE `prescription_details`
-  MODIFY `id` tinyint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+MODIFY `id` tinyint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
 -- AUTO_INCREMENT for table `stock`
 --
 ALTER TABLE `stock`
-  MODIFY `stock_id` tinyint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+MODIFY `stock_id` tinyint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `tempprescri`
 --
 ALTER TABLE `tempprescri`
-  MODIFY `id` tinyint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+MODIFY `id` tinyint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- Constraints for dumped tables
@@ -423,14 +423,14 @@ ALTER TABLE `tempprescri`
 -- Constraints for table `invoice_details`
 --
 ALTER TABLE `invoice_details`
-  ADD CONSTRAINT `invoices` FOREIGN KEY (`invoice`) REFERENCES `invoice` (`invoice_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `stocks` FOREIGN KEY (`drug`) REFERENCES `stock` (`stock_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ADD CONSTRAINT `invoices` FOREIGN KEY (`invoice`) REFERENCES `invoice` (`invoice_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+ADD CONSTRAINT `stocks` FOREIGN KEY (`drug`) REFERENCES `stock` (`stock_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `prescription_details`
 --
 ALTER TABLE `prescription_details`
-  ADD CONSTRAINT `dsfd` FOREIGN KEY (`drug_name`) REFERENCES `stock` (`stock_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ADD CONSTRAINT `dsfd` FOREIGN KEY (`drug_name`) REFERENCES `stock` (`stock_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

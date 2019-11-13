@@ -31,29 +31,29 @@ if(isset($_SESSION['username'])){
             <div id="left_column">
                 <div id="button">
                   <ul>
-                     <li><a href="manager.php">Dashboard</a></li>
-                     <li><a href="view.php">View Users</a></li>
-                     <li><a href="view_prescription.php">View Prescriptions</a></li>
-                     <li><a href="stock.php">Manage Stock</a></li>
-                     <li><a href="logout.php">Logout</a></li>
-                 </ul>	
-             </div>
-         </div>
-         <div id="main">
-            <div id="tabbed_box" class="tabbed_box">  
-                <h4>View users</h4> 
-                <hr/>	
-                <div class="tabbed_area">  
+                   <li><a href="manager.php">Dashboard</a></li>
+                   <li><a href="view.php">View Users</a></li>
+                   <li><a href="view_prescription.php">View Prescriptions</a></li>
+                   <li><a href="stock.php">Manage Stock</a></li>
+                   <li><a href="logout.php">Logout</a></li>
+               </ul>	
+           </div>
+       </div>
+       <div id="main">
+        <div id="tabbed_box" class="tabbed_box">  
+            <h4>View users</h4> 
+            <hr/>	
+            <div class="tabbed_area">  
 
-                    <ul class="tabs">  
-                        <li><a href="javascript:tabSwitch('tab_1', 'content_1');" id="tab_1" class="active">Pharmacist </a></li>  
-                        <li><a href="javascript:tabSwitch('tab_2', 'content_2');" id="tab_2">Cashier</a></li>
-                        <li><a href="javascript:tabSwitch('tab_3', 'content_3');" id="tab_3">Manager</a></li>
+                <ul class="tabs">  
+                    <li><a href="javascript:tabSwitch('tab_1', 'content_1');" id="tab_1" class="active">Pharmacist </a></li>  
+                    <li><a href="javascript:tabSwitch('tab_2', 'content_2');" id="tab_2">Cashier</a></li>
+                    <li><a href="javascript:tabSwitch('tab_3', 'content_3');" id="tab_3">Manager</a></li>
 
-                    </ul>  
+                </ul>  
 
-                    <div id="content_1" class="content">  
-                        <?php
+                <div id="content_1" class="content">  
+                    <?php
 		/* 
 		View
         Displays all data from 'Pharmacist' table

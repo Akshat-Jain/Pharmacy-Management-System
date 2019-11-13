@@ -16,8 +16,8 @@ if ($conn->query($sql) === TRUE) {
 	echo "Error: " . $sql . "<br>" . $conn->error;
 }
 echo "<SCRIPT type='text/javascript'>
-    	window.location.replace('stock_pharmacist.php');
-		</SCRIPT>";
+window.location.replace('stock_pharmacist.php');
+</SCRIPT>";
 ?>
 
 

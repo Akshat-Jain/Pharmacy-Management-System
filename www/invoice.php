@@ -31,24 +31,24 @@ while($item1=mysqli_fetch_array($getDetails))
 	$sqlId=mysqli_query($conn,"INSERT INTO invoice_details(invoice,drug,cost,quantity)
 		VALUES('{$invoiceNo}','{$details['stock_id']}','{$details['cost']}','{$item1['quantity']}')");
 	$count[]=$details['cost']*$item1['quantity'];
-			}
-			$tot=array_sum($count);
-			$getDetails=mysqli_query($conn,"SELECT * FROM tempprescri WHERE customer_id='{$c_id}'");
-			while($item12=mysqli_fetch_array($getDetails))
-			{
-				$getDetails12=mysqli_query($conn,"SELECT stock_id, cost FROM stock WHERE drug_name='{$item12['drug_name']}'");	
-				
-				$details2=mysqli_fetch_array($getDetails12);
-				$sqlIp=mysqli_query($conn,"INSERT INTO prescription_details(pres_id,drug_name,strength,dose,quantity)
-					VALUES('{$presIdd}','{$details2['stock_id']}','{$item12['strength']}','{$item12['dose']}','{$item12['quantity']}') ");	
-				
-			}
-			$sqlD=mysqli_query($conn,"DELETE FROM tempprescri WHERE customer_id='{$c_id}' ");
+}
+$tot=array_sum($count);
+$getDetails=mysqli_query($conn,"SELECT * FROM tempprescri WHERE customer_id='{$c_id}'");
+while($item12=mysqli_fetch_array($getDetails))
+{
+	$getDetails12=mysqli_query($conn,"SELECT stock_id, cost FROM stock WHERE drug_name='{$item12['drug_name']}'");	
+	
+	$details2=mysqli_fetch_array($getDetails12);
+	$sqlIp=mysqli_query($conn,"INSERT INTO prescription_details(pres_id,drug_name,strength,dose,quantity)
+		VALUES('{$presIdd}','{$details2['stock_id']}','{$item12['strength']}','{$item12['dose']}','{$item12['quantity']}') ");	
+	
+}
+$sqlD=mysqli_query($conn,"DELETE FROM tempprescri WHERE customer_id='{$c_id}' ");
 
-			unset($_SESSION['custId'], $_SESSION['custName'], $_SESSION['age'], $_SESSION['sex'], $_SESSION['postal_address'], $_SESSION['phone']);
-			echo "<SCRIPT type='text/javascript'>
-			window.location.replace('prescription.php');
-			</SCRIPT>";
-			exit;
+unset($_SESSION['custId'], $_SESSION['custName'], $_SESSION['age'], $_SESSION['sex'], $_SESSION['postal_address'], $_SESSION['phone']);
+echo "<SCRIPT type='text/javascript'>
+window.location.replace('prescription.php');
+</SCRIPT>";
+exit;
 
-			?>
+?>

@@ -226,23 +226,23 @@ if(isset($_SESSION['username'])){
         					}
 
         				echo"</select>";?>  </td></tr><tr>
-        				<td align="left"><input name="strength" type="text" style="width:170px"  id="strength"placeholder="Strength" /></td></tr><tr>
-        				<td align="left"><input name="dose" type="text" style="width:170px" id="dose" placeholder="Dose" /></td></tr><tr>
-        				<td align="left"><input name="quantity" type="text" style="width:170px" id="quantity"placeholder="Quantity"/></td></tr>
+                            <td align="left"><input name="strength" type="text" style="width:170px"  id="strength"placeholder="Strength" /></td></tr><tr>
+                                <td align="left"><input name="dose" type="text" style="width:170px" id="dose" placeholder="Dose" /></td></tr><tr>
+                                    <td align="left"><input name="quantity" type="text" style="width:170px" id="quantity"placeholder="Quantity"/></td></tr>
 
 
-        				<tr><td><input name="submit" type="submit" value="Submit"/></td></tr>
-        			</table>
-        		</form>
-        		<script>
-        			document.getElementById('drug_name').selectedIndex = 0;
-        		</script>
-        	</div>
-        </div>  
-    </div>  
-</div>
-</div>
-<div id="footer" align="Center"> </div>
-</div>
+                                    <tr><td><input name="submit" type="submit" value="Submit"/></td></tr>
+                                </table>
+                            </form>
+                            <script>
+                             document.getElementById('drug_name').selectedIndex = 0;
+                         </script>
+                     </div>
+                 </div>  
+             </div>  
+         </div>
+     </div>
+     <div id="footer" align="Center"> </div>
+ </div>
 </body>
 </html>
